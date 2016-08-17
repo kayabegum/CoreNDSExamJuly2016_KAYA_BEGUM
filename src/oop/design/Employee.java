@@ -22,7 +22,15 @@ public interface Employee {
 	
 	//employee benefit
 	public void benefitLayout();
-	
-	
 
+
+	public String City();
+
+	public String DOB();
+
+	public String hireDate();
+
+	public void employeeAcademic();
+
+	public void emplyeeSkill();
 }

@@ -1,8 +1,12 @@
 package reader;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class DataReader {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		/*
 		 * User API to read the below textFile and print to console.
 		 * Use BufferedReader class. 
@@ -13,7 +17,24 @@ public class DataReader {
 		 */
 
 		String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car.txt";
+		FileReader fr = null;
+		BufferedReader br = null;
+		try {
+			fr = new FileReader(textFile);
+			br = new BufferedReader(fr);
+			String text = "";
+			while ((text = br.readLine()) != null) {
+				System.out.println(text);
+			}
+		} catch (Exception ex) {
+			System.out.println("Error path not found");
+		} finally {
+			fr.close();
+			br.close();
+
+		}
+		}
 	
 	}
 
-}
+
